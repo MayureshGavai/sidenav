@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="side-navbar">
+            <img src="./assets/logo-nmims.png" alt="">
+            <div class="menu">
+               <ul>
+                    <li class="menu-item active">
+                        <span class="top-curve"></span>
+                        <a>
+                            <img src="./assets/home-icon.svg" alt="">
+                            Home
+                        </a>
+                        <span class="bottom-curve"></span>
+                    </li>
+                    <li class="menu-item">
+                        <span class="top-curve"></span>
+                        <a>
+                            <img src="./assets/ClipboardListOutline.svg" alt="">
+                            Demand Estimation
+                        </a>
+                        <span class="bottom-curve"></span>
+                    </li>
+                    <li class="menu-item">
+                        <span class="top-curve"></span>
+                        <a>
+                            <img src="./assets/trophy.svg" alt="">
+                            Bidding
+                        </a>
+                        <span class="bottom-curve"></span>
+                    </li>
+                    <li class="menu-item">
+                        <span class="top-curve"></span>
+                        <a>
+                            <img src="./assets/BadgeCheckOutline.svg" alt="">
+                            Confirm List
+                        </a>
+                        <span class="bottom-curve"></span>
+                    </li>
+                    <li class="menu-item">
+                        <span class="top-curve"></span>
+                        <a>
+                            <img src="./assets/CollectionOutline.svg" alt="">
+                            Waiting List
+                        </a>
+                        <span class="bottom-curve"></span>
+                    </li>
+                    <li class="menu-item">
+                        <span class="top-curve"></span>
+                        <a>
+                            <img src="./assets/CursorClickOutline.svg" alt="">
+                            Add & Drop
+                        </a>
+                        <span class="bottom-curve"></span>
+                    </li>
+               </ul>
+            </div>
+        </div>
+        <div class="home-container">
+            <div class="navbar">
+            </div>
+            <div class="home">
+                <h1>Home</h1>
+            </div>
+        </div>
+    </div>  
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+			const listItems = document.querySelectorAll(".menu ul li");
+
+			listItems.forEach(function (item) {
+				item.addEventListener("click", function (e) {
+					e.preventDefault();
+                    console.log('hello')
+					listItems.forEach(function (li) {
+						li.classList.remove("active");
+					});
+					item.classList.add("active");
+				});
+			});
+		});
+    </script>
+</body>
+</html>

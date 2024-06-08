@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+:root {
+  --primary-color: #DC2626;
+  --background-color: #FDF4F4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+.container {
+  display: flex;
+}
+.container .side-navbar {
+  width: 256px;
+  height: 100vh;
+  background-color: var(--navbar-color);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.container .side-navbar img {
+  margin-left: 28px;
+  margin-top: 24px;
+  width: 200px;
+}
+.container .side-navbar .menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 10px;
+}
+.container .side-navbar .menu ul li {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+.container .side-navbar .menu ul li .top-curve, .container .side-navbar .menu ul li .bottom-curve {
+  width: 100%;
+  height: 5px;
+  background-color: aquamarine;
+}
+.container .side-navbar .menu ul li a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.container .side-navbar .menu ul li a img {
+  margin: 0;
+  width: 24px;
+  height: 24px;
+}
+.container .side-navbar .menu ul li.active {
+  background-color: blueviolet;
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+.container .side-navbar .menu ul li.active a {
+  background-color: var(--primary-color);
+  border-radius: 8px;
+  color: #fff;
+}
+.container .side-navbar .menu ul li.active a img {
+  filter: invert(100%) sepia(1%) saturate(1107%) hue-rotate(171deg) brightness(114%) contrast(100%);
+}
+.container .home-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100vh;
+}
+.container .home-container .navbar {
+  height: 75px;
+  background-color: var(--navbar-color);
+}
+.container .home-container .home {
+  height: 100vh;
+  background-color: #fff;
+  padding: 20px;
+  border-top-left-radius: 16px;
+}/*# sourceMappingURL=styles.css.map */
