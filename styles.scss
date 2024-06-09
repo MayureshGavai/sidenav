@@ -44,11 +44,31 @@ body{
           display: flex;
           flex-direction: column;
           cursor: pointer;
+          position: relative;
+          margin: 10px 0;
           
-          .top-curve , .bottom-curve{
-            width: 100%;
-            height: 5px;
-            background-color: aquamarine;
+          // .top-curve , .bottom-curve{
+          //   width: 100%;
+          //   height: 5px;
+          //   background-color: aquamarine;
+          // }
+
+          .top-curve, .bottom-curve{
+            // content:'';
+            position: absolute;
+            width: 40px; 
+            height: 10px;
+            right: 0px;
+          }
+          
+          .top-curve{
+            top: -10px;
+            background-color: orchid;
+          }
+
+          .bottom-curve{
+            bottom: -10px;
+            background-color: brown;
           }
 
           a{
@@ -69,13 +89,32 @@ body{
         }
 
         li.active{
-          background-color: blueviolet;
+          background-color: #fff;
             border-top-left-radius: 16px;
             border-bottom-left-radius: 16px;
+            padding: 10px;
 
+            .top-curve{
+              // background-color: var(--background-color);
+              border-bottom-right-radius: 16px;
+            }
 
+            .bottom-curve{
+              // background-color: ;
+              border-top-right-radius: 16px;
+            }
+
+            // li.active::before, li.active::after{
+            //   content:'';
+            //   position: absolute;
+            //   width: 10px; 
+            //   height: 10px;
+            //   right: 0px;
+            //   background-color: teal;
+            // }
 
             a {
+              padding: 5px;
               background-color: var(--primary-color);
               border-radius: 8px;
               color: #fff;

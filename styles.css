@@ -41,11 +41,22 @@ body {
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  position: relative;
+  margin: 10px 0;
 }
 .container .side-navbar .menu ul li .top-curve, .container .side-navbar .menu ul li .bottom-curve {
-  width: 100%;
-  height: 5px;
-  background-color: aquamarine;
+  position: absolute;
+  width: 40px;
+  height: 10px;
+  right: 0px;
+}
+.container .side-navbar .menu ul li .top-curve {
+  top: -10px;
+  background-color: orchid;
+}
+.container .side-navbar .menu ul li .bottom-curve {
+  bottom: -10px;
+  background-color: brown;
 }
 .container .side-navbar .menu ul li a {
   text-decoration: none;
@@ -61,11 +72,19 @@ body {
   height: 24px;
 }
 .container .side-navbar .menu ul li.active {
-  background-color: blueviolet;
+  background-color: #fff;
   border-top-left-radius: 16px;
   border-bottom-left-radius: 16px;
+  padding: 10px;
+}
+.container .side-navbar .menu ul li.active .top-curve {
+  border-bottom-right-radius: 16px;
+}
+.container .side-navbar .menu ul li.active .bottom-curve {
+  border-top-right-radius: 16px;
 }
 .container .side-navbar .menu ul li.active a {
+  padding: 5px;
   background-color: var(--primary-color);
   border-radius: 8px;
   color: #fff;
