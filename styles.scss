@@ -3,6 +3,7 @@
 :root {
   --primary-color: #DC2626;
   --background-color: #FDF4F4;
+  // --background-color: #F9E8E8;
 }
 
 * {
@@ -17,14 +18,20 @@ body{
 
 .container {
   display: flex;
-
+  // background-color: #fff;
+  .sidenavbar-container{
+    background-color: #fff;
+    // border: 2px solid red;
+  }
   .side-navbar {
     width: 256px;
     height: 100vh;
-    background-color: var(--navbar-color);
+    background-color: var(--background-color);
     display: flex;
     flex-direction: column;
     gap: 24px;
+    // transition: all 0.5s ease-in-out;
+
 
     img {
       margin-left: 28px;
@@ -46,6 +53,7 @@ body{
           cursor: pointer;
           position: relative;
           margin: 10px 0;
+          margin-left: 20px;
           
           // .top-curve , .bottom-curve{
           //   width: 100%;
@@ -53,23 +61,23 @@ body{
           //   background-color: aquamarine;
           // }
 
-          .top-curve, .bottom-curve{
-            // content:'';
-            position: absolute;
-            width: 40px; 
-            height: 10px;
-            right: 0px;
-          }
+          // .top-curve, .bottom-curve{
+          //   // content:'';
+          //   position: absolute;
+          //   width: 40px; 
+          //   height: 10px;
+          //   right: 0px;
+          // }
           
-          .top-curve{
-            top: -10px;
-            background-color: orchid;
-          }
+          // .top-curve{
+          //   top: -10px;
+          //   background-color: var(--navbar-color);
+          // }
 
-          .bottom-curve{
-            bottom: -10px;
-            background-color: brown;
-          }
+          // .bottom-curve{
+          //   bottom: -5px;
+          //   background-color: brown;
+          // }
 
           a{
             text-decoration: none;
@@ -89,10 +97,12 @@ body{
         }
 
         li.active{
-          background-color: #fff;
+            background-color: #fff;
             border-top-left-radius: 16px;
             border-bottom-left-radius: 16px;
             padding: 10px;
+            margin-left: 0;
+
 
             .top-curve{
               // background-color: var(--background-color);
@@ -114,7 +124,7 @@ body{
             // }
 
             a {
-              padding: 5px;
+              padding: 5px 10px;
               background-color: var(--primary-color);
               border-radius: 8px;
               color: #fff;
@@ -125,6 +135,34 @@ body{
               }
             }
         }
+
+        li.active::before, li.active::after{
+          content:'';
+          position: absolute;
+          width: 10px; 
+          height: 10px;
+          right: -10px;
+          // background-color: var(--background-color);
+          // background-color: teal;
+         
+        }
+
+        li.active::before{
+          top: -10px;
+          border-bottom-right-radius: 16px;
+          border-right: 10px solid #fff;
+          border-bottom: 10px solid #fff;
+        }
+
+        li.active::after{
+          bottom: -10px;
+          border-top-right-radius: 16px;
+          border-top: 10px solid #fff;
+          border-right: 10px solid #fff;
+        }
+        
+
+
         
 
       }
@@ -144,7 +182,7 @@ body{
 
     .navbar {
       height: 75px;
-      background-color: var(--navbar-color);
+      background-color: var(--background-color);
 
 
     }
@@ -154,6 +192,212 @@ body{
       background-color: #fff;
       padding: 20px;
       border-top-left-radius: 16px;
+      display: flex;
+      flex-direction: column;
+
+      .card-container{
+        margin-top: 20px;
+        flex-grow: 1;
+        // width: 100%;
+        // border: 1px solid red;
+
+        div:first-child{
+          display: flex;
+          gap: 20px;
+        }
+
+        .concentration-card{
+          padding: 20px;
+          width: 450px;
+          display: flex;
+          border: 1px solid #E0E0E0;
+          border-radius: 8px;
+          gap: 10px;
+          box-shadow:0px 0px 28px 0 rgba(0,0,0,0.07);
+
+          img{
+            height: 125px;
+            width: 125px;            
+          }
+          
+          div{
+            width: 100%;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            // gap: 8px;
+            justify-content: space-between;
+            
+            h4{
+              font-size: 18px;
+            }
+
+            select{
+              width: 100%;
+              padding: 8px;
+              border-radius: 8px;
+              border: 1px solid #E0E0E0;
+              font-size: 14px;
+              option{
+                border-radius: 8px;
+                font-size: 16px;
+                background-color: #fff;
+                color: #000;
+                border: none;
+                border-radius: 8px;
+              }
+            }
+
+            button{
+              padding: 8px 16px;
+              background-color: var(--primary-color);
+              color: #fff;
+              border: none;
+              border-radius: 8px;
+              cursor: pointer;
+              font-size: 16px;
+            }
+          }
+        }
+
+        .credits-card{
+          width: calc(100% - 450px);
+          padding: 20px;
+          display: flex;
+          border: 1px solid #E0E0E0;
+          border-radius: 8px;
+          gap: 20px;
+          box-shadow:0px 0px 28px 0 rgba(0,0,0,0.07);
+         
+          img{
+            height: 125px;
+          }
+
+          div{
+            width: 100%;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            h4{
+              font-size: 18px;
+            }
+
+            .info-row{
+              margin: 10px 0;
+              display: flex;
+              flex-direction: row;
+              // flex-direction: column;
+              justify-content: space-between;
+
+              .info-col{
+                padding: 10px 0;
+                width: fit-content;
+                display: flex;
+                flex-direction: column;
+                p{
+                  font-size: 18px;
+                  span{
+                    font-weight: 600;
+                  }
+                }
+              }
+
+
+            }
+
+          }
+        }
+
+        .card-row-2{
+          display: flex;
+          width: 100%;
+          gap: 20px;
+        }
+        .completed-container{
+          margin-top: 15px;
+          padding: 20px;
+          flex-grow: 1;
+          height: 350px;
+          display: flex;
+          flex-direction: column;
+          // gap: 10px;
+          border-radius: 8px;
+          border: 1px solid #E0E0E0;
+          box-shadow:0px 0px 28px 0 rgba(0,0,0,0.07);
+
+          div{
+            width: 100%;
+            align-items: center;
+            
+            h4{
+              font-size: 18px;
+            }
+            
+            select{
+              width: 40%;
+              padding: 8px;
+              border-radius: 8px;
+              border: 1px solid #E0E0E0;
+              font-size: 16px;
+              option{
+                border-radius: 8px;
+                font-size: 16px;
+                background-color: #fff;
+                color: #000;
+                border: none;
+                border-radius: 8px;
+              }
+            }
+          }
+
+          
+        
+
+          .courses-list{
+            width: 100%;
+            // margin-top: 5px;
+          
+            p{
+              margin: 0 0 15px 0;
+              font-style: italic;
+            color: #686868;
+            // font-size: 12px;
+            }
+
+            .courses-grid{
+              display: grid;
+              // gr
+
+              .course-card{
+                width: 225px;
+                height: 95px;
+                border: 1px solid #E0E0E0;
+                border-radius: 8px;
+              }
+            }
+          }
+
+
+
+        }
+
+        .notifications-container{
+          width: 350px;
+          margin-top: 15px;
+          padding: 20px;
+          display: flex;
+          gap: 20px;
+          border-radius: 8px;
+          border: 1px solid #E0E0E0;
+          box-shadow:0px 0px 28px 0 rgba(0,0,0,0.07);
+        }
+
+    
+
+      }
+
     }
 
   }
